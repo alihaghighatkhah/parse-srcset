@@ -1,0 +1,29 @@
+<html>
+	<head></head>
+	<script type="text/javascript" src="../src/srcset-parser.js"></script>
+	<body>
+
+
+		<img id="type-1" sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw, calc(33vw - 100px)"
+			srcset="img-200.jpg 200w, img-400.jpg 400w, img-800.jpg 800w, img-1600.jpg 1600w"
+			src="img-400.jpg">
+
+		<script type="text/javascript">
+			// making an instance
+			var setter = new srcsetParser();
+
+			// parse a srcset string
+			var parsedAttr = srsetter.parse("swing-200.jpg 200w, swing-400.jpg 400w, swing-800.jpg 800w, swing-1600.jpg 1600w");
+			console.log('parsedAttr : ', parsedAttr);
+
+			// get srcset string from object
+			srsetter.getStrFromList(parsedAttr);
+
+			// setting to element
+			srsetter.set(document.getElementById('type-1'), parsedAttr);
+
+		</script>
+
+
+	</body>
+</html>
